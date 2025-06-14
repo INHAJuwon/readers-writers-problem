@@ -44,7 +44,7 @@ void* writer(void* arg){
 			sem_post(&rsem);
 		sem_post(&y);
 	}
-return NULL;
+	return NULL;
 }
 
 int main(){
