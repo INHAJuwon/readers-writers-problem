@@ -30,9 +30,10 @@ void* writer(void* arg){
 		printf("write\n");
 		sem_post(&wsem);
 	}
+	return NULL;
 }
 
-void main(){
+int main(){
 	pthread_t readers[2], writers[2];
 
 	sem_init(&x,0,1);
@@ -47,4 +48,5 @@ void main(){
 		pthread_join(readers[i],NULL);
 		pthread_join(writers[i],NULL);
 	}
+	return 0;
 }
